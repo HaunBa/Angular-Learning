@@ -3,6 +3,7 @@
     <span>Dora</span>
     <span class="spacer"></span>
     <app-menu
+      [options]="options$ | async"
       (themeChange)="themeChangeHandler($event)">
     </app-menu>
   </mat-toolbar-row>

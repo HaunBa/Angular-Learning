@@ -5,6 +5,7 @@ import { Observable } from "rxjs";
 import { StyleManagerService } from "./style-manager.service";
 import { Option } from "./interfaces/option.model";
 
+import { options } from "./../assets/options.json";
 @Injectable()
 export class ThemeService {
     constructor(
