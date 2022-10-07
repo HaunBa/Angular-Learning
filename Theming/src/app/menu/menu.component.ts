@@ -9,7 +9,7 @@ import { ThemeService } from "./../theme-service.service";
   styleUrls: ["./menu.component.scss"]
 })
 export class MenuComponent {
-  @Input() options: Array<Option>;
+  @Input() options: Array<Option> | null;
   @Output() themeChange: EventEmitter<string> = new EventEmitter<string>();
 
   constructor(private themeService: ThemeService) {

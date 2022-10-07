@@ -5,7 +5,8 @@ import { Observable } from "rxjs";
 import { StyleManagerService } from "./style-manager.service";
 import { Option } from "./interfaces/option.model";
 
-import { options } from "./../assets/options.json";
+// import { options } from "./../assets/options.json";
+
 @Injectable()
 export class ThemeService {
     constructor(
@@ -14,8 +15,7 @@ export class ThemeService {
     ) {}
 
     getThemeOptions(): Observable<Option[]> {
-      var option = this.http.get<Array<Option>>("assets/options.json");
-      return option;
+      return this.http.get<Array<Option>>("assets/options.json");
     }
 
     setTheme(themeToSet : string) {

@@ -13,7 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 })
 
 export class HeaderComponent implements OnInit  {
-  options$: Observable<Array<Option>> = this.themeService.getThemeOptions();
+  options$: Observable<Array<Option>> = this.themeService.getThemeOptions()!;
 
   constructor(private readonly themeService: ThemeService) {}
 
