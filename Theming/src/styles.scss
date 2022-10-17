@@ -2,21 +2,28 @@
 
 @include mat.core();
 
-$my-app-primary: mat.define-palette(mat.$indigo-palette);
-$my-app-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
-$my-app-warn: mat.define-palette(mat.$red-palette);
+// Pink Blue-grey theme for switcher
 
-$my-app-theme: mat.define-light-theme(
-  (
-    color: (
-      primary: $my-app-primary,
-      accent: $my-app-accent,
-      warn: $my-app-warn,
-    ),
+$pink_blue_grey: mat.define-palette(mat.$blue-grey-palette);
+
+// Purple Amber default theme for switcher
+
+$purple_amber-primary: mat.define-palette(mat.$indigo-palette);
+$purple_amber-accent: mat.define-palette(mat.$pink-palette);
+$purple_amber-warn: mat.define-palette(mat.$purple-amber-warn);
+$purple_amber-theme: mat.define-palette((
+  color:(
+    primary: $purple_amber-primary,
+    accent: $purple_amber-accent,
+    warn: $purple_amber-warn
   )
-);
+));
 
-@include mat.all-component-themes($my-app-theme);
+// add purple amber theme to body when class is added to body
+.purple_amber-theme{
+  @include mat.core-color($purple_amber-theme);
+  @include mat.button-theme($purple_amber-theme);
+}
 
 html,
 body {
