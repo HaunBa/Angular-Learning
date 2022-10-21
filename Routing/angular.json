@@ -70,6 +70,10 @@
               "browserTarget": "Routing:build:development"
             }
           },
+          "options": {
+            "browserTarget": "Routing:build",
+            "proxyConfig": "src/proxy.conf.json"
+          },
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
@@ -97,5 +101,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "b27bd044-223c-4e87-b21a-2c39c3a37b37"
   }
 }

@@ -1,8 +1,3 @@
-/**
- * Copied from https://github.com/angular/material.angular.io/blob/master/src/app/shared/style-manager/style-manager.ts
- * TODO(@SiddAjmera): Give proper attribution here
- */
-
  import { Injectable } from "@angular/core";
 
  @Injectable()
@@ -44,7 +39,6 @@
    document.head.appendChild(linkEl);
    return linkEl;
  }
-
  function getClassNameForKey(key: string) {
    return `app-${key}`;
  }

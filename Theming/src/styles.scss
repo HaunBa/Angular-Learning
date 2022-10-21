@@ -4,13 +4,21 @@
 
 // Pink Blue-grey theme for switcher
 
-$pink_blue_grey: mat.define-palette(mat.$blue-grey-palette);
-
+$pink_blue_grey-primary: mat.define-palette(mat.$blue-grey-palette);
+$pink_blue_grey-accent: mat.define-palette(mat.$blue-grey-palette);
+$pink_blue_grey-warn: mat.define-palette(mat.$blue-grey-palette);
+$pink_blue_grey-theme: mat.define-palette(
+  (color:(
+    primary: $pink_blue_grey-primary,
+    accent: $pink_blue_grey-accent,
+    warn: $pink_blue_grey-warn
+  ))
+);
 // Purple Amber default theme for switcher
 
-$purple_amber-primary: mat.define-palette(mat.$indigo-palette);
-$purple_amber-accent: mat.define-palette(mat.$pink-palette);
-$purple_amber-warn: mat.define-palette(mat.$purple-amber-warn);
+$purple_amber-primary: mat.define-palette(mat.$indigo-palette, 500);
+$purple_amber-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$purple_amber-warn: mat.define-palette(mat.$indigo-palette);
 $purple_amber-theme: mat.define-palette((
   color:(
     primary: $purple_amber-primary,
@@ -18,6 +26,12 @@ $purple_amber-theme: mat.define-palette((
     warn: $purple_amber-warn
   )
 ));
+
+// add pink-blue-grey theme do body when class is added to body
+.pink-blue-grey-theme{
+  @include mat.core-color($pink_blue_grey-theme);
+  @include mat.button-theme($pink_blue_grey-theme);
+}
 
 // add purple amber theme to body when class is added to body
 .purple_amber-theme{
